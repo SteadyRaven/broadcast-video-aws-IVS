@@ -1007,8 +1007,8 @@ async function createClient() {
   const previewEl = document.getElementById("preview");
   window.client.attachPreview(previewEl);
 
-  // await handleVideoDeviceSelect();
-  // await handleAudioDeviceSelect();
+  await handleVideoDeviceSelect();
+  await handleAudioDeviceSelect();
 }
 const init = async () => {
   document.getElementById("ingest-endpoint").innerText =
@@ -1048,7 +1048,7 @@ const init = async () => {
 
     await createClient();
 
-    // await initializeDeviceSelect();
+    await initializeDeviceSelect();
 
     handleValidationErrors(validate(), true);
     return;
