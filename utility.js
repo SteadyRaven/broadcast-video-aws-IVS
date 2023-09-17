@@ -911,12 +911,12 @@ async function initializeDeviceSelect() {
   const audioSelectEl = document.getElementById("audio-devices");
 
   audioSelectEl.disabled = false;
-  // audioSelectEl.options[0] = new Option("None", "None");
+  audioSelectEl.options[0] = new Option("None", "None");
   // remove the device with id "default" from the list
-  // audioDevices.splice(
-  //   audioDevices.findIndex(device => device.deviceId === "default"),
-  //   1
-  // );
+  audioDevices.splice(
+    audioDevices.findIndex(device => device.deviceId === "default"),
+    1
+  );
   audioDevices.forEach((device, index) => {
     if (device.deviceId === "default") return;
     audioSelectEl.options[index] = new Option(device.label, device.deviceId);
